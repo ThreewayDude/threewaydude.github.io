@@ -14,10 +14,12 @@ export class Player {
         document.addEventListener('mouseup', this._onMouseUp.bind(this));
 
         this._velocity = new THREE.Vector3();
+
         this._moveForward  = false;
         this._moveBackward = false;
         this._moveLeft     = false;
         this._moveRight    = false;
+
         this._canJump      = false;
         this._isRunning    = false;
 
@@ -108,15 +110,22 @@ export class Player {
         }
     }
 
-    update(deltaTime, objects, scene) {
+    update(deltaTime, scene, physicsWorld) {
         // Shooting
         if (this._isShooting && !this._hasShot) {
             this._gunRayCaster.ray.origin.copy(this.object.position);
             this._camera.getWorldDirection(this._gunRayCaster.ray.direction);
-            const interesections = this._gunRayCaster.intersectObjects(objects);
+            const interesections = this._gunRayCaster.intersectObjects(scene.children);
 
             if (interesections.length > 0) {
-                scene.remove(interesections[0].object);
+                let object = interesections[0].object;
+                let rigidBody = object.userData.physicsBody;
+
+                delete rigidBody.getMotionState();
+                delete rigidBody.getCollisionShape();
+                physicsWorld.removeRigidBody(rigidBody);
+
+                scene.remove(object);
             }
             
             this._hasShot = true;
@@ -130,7 +139,7 @@ export class Player {
         // Check for ground
         this._raycaster.ray.origin.copy(this.object.position);
         this._raycaster.ray.origin.y = -10;
-        const interesections = this._raycaster.intersectObjects(objects);
+        const interesections = this._raycaster.intersectObjects(scene.children);
         const onObject = interesections.length > 0;
 
         if (onObject === true) {
@@ -161,12 +170,5 @@ export class Player {
             this._velocity.y = 0;
             this._canJump = true;
         }
-    }
-
-    logDirections() {
-        console.log("forward: " + this._moveForward);
-        console.log("backward: " + this._moveBackward);
-        console.log("left: " + this._moveLeft);
-        console.log("right: " + this._moveRight);
     }
 }
