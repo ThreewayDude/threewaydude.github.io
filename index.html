@@ -94,6 +94,7 @@
 		<script type="module">
 			import * as THREE from './js/three.module.js';
             import { Player } from './js/Player.js';
+			import { GLTFLoader } from 'https://threejsfundamentals.org/threejs/resources/threejs/r127/examples/jsm/loaders/GLTFLoader.js';
 
 			let camera, scene, renderer, player;
 			let physicsWorld, rigidBodies = [], tmpTrans;
@@ -192,6 +193,17 @@
 				rigidBodies.push(box);
 			}
 
+			function loadModelAndAddToScene(modelpath) {
+
+				const gltfLoader = new GLTFLoader();
+
+				gltfLoader.load(modelpath, (gltf) => {
+				const root = gltf.scene;
+				scene.add(root);
+
+			});
+			}
+
 			function updatePhysics(deltaTime) {
 				physicsWorld.stepSimulation(deltaTime, 10);
 
@@ -272,19 +284,21 @@
 
 				createFloor();
 
-				const boxGeometry = new THREE.BoxGeometry( 20, 20, 20 );
+				// const boxGeometry = new THREE.BoxGeometry( 20, 20, 20 );
 
-				for ( let i = 0; i < 100; i ++ ) {
-					const pos = new THREE.Vector3();
-					pos.x = Math.floor( Math.random() * 6 - 3 ) * 20;
-					pos.y = Math.floor( Math.random() * 50 ) * 20 + 10;
-					pos.z = Math.floor( Math.random() * 6 - 3 ) * 20;
+				// for ( let i = 0; i < 100; i ++ ) {
+				// 	const pos = new THREE.Vector3();
+				// 	pos.x = Math.floor( Math.random() * 6 - 3 ) * 20;
+				// 	pos.y = Math.floor( Math.random() * 50 ) * 20 + 10;
+				// 	pos.z = Math.floor( Math.random() * 6 - 3 ) * 20;
 
-					let colShape = new Ammo.btBoxShape(new Ammo.btVector3(10, 10, 10));
-					colShape.setMargin(0.05);
+				// 	let colShape = new Ammo.btBoxShape(new Ammo.btVector3(10, 10, 10));
+				// 	colShape.setMargin(0.05);
 
-					createBlock(pos, boxGeometry, colShape);
-				}
+				// 	createBlock(pos, boxGeometry, colShape);
+				// }
+
+				loadModelAndAddToScene('res/models/map-prototype/scene.gltf');
 
 				//
 
@@ -316,7 +330,7 @@
 
 				if ( player.controls.isLocked === true ) {
 					const deltaTime = ( time - prevTime ) / 1000;
-					updatePhysics(deltaTime);
+					// updatePhysics(deltaTime);
                     player.update(deltaTime, scene, physicsWorld);
                 }
 
