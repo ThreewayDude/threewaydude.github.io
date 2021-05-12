@@ -1,0 +1,173 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'Gadugi';
+}
+
+body {
+    background-color: #313131;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: 80rem;
+    margin: 2rem auto;
+}
+
+.special-text {
+    font-family: 'Paytone One';
+    font-weight: 500;
+}
+
+.special-text * {
+    font-family: 'Paytone One';
+    font-weight: 500;
+}
+
+#navbar {
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link {
+    vertical-align: auto;
+    width: 4rem;
+    margin: 0 0.5rem;
+}
+
+.link img {
+    margin: 0 auto;
+}
+
+.link h6 {
+    visibility: hidden;
+    font-size: 1rem;
+    white-space: nowrap;
+    float: left;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.link:hover h6 {
+    visibility: visible;
+}
+
+#select-hritik {
+    font-size: 2.25rem;
+    margin: auto 1.5rem auto 0;
+    padding: 0 0 2rem 0;
+}
+
+#details {
+    margin: auto 0;
+    padding: 0 0 2rem 0;
+}
+
+#details * {
+    font-size: 1.15rem;
+}
+
+h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+h3 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+#about {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#hero-image-section {
+    margin-left: 0.5rem;
+}
+
+#abilities {
+    width: 35%;
+}
+
+#ability-list {
+    column-count: 2;
+    column-width: 50%;
+}
+
+#blurb {
+    margin-left: 0.5rem;
+    width: 42.5%;
+}
+
+.grey-text {
+    color: #686868;
+}
+
+#projects-header {
+    color: #686868;
+    width: fit-content;
+    margin: 0 auto 1rem auto;
+}
+
+#project-list {
+    column-count: 2;
+    column-width: 50%;
+}
+
+.project-card {
+    display: inline-block;
+    background-color: #3d3d3d;
+    margin: 0.75rem 0;
+    width: 100%;
+    padding: 1.5rem 2.5rem 2.5rem 2.5rem;
+    border-radius: 1rem;
+}
+
+.project-card nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.project-title {
+    font-size: 2.25rem;
+}
+
+.project-date {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+.project-skill {
+    font-weight: 600;
+    display: inline;
+    list-style: none;
+    font-size: 1.15rem;
+    margin-right: 1rem;
+}
+
+.project-card p {
+    margin-top: 1rem;
+}
