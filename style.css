@@ -134,6 +134,7 @@ h3 {
 #projects-header {
     color: #686868;
     width: fit-content;
+    width: -moz-fit-content;
     margin: 0 auto 1rem auto;
 }
 
