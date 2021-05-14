@@ -79,11 +79,18 @@ a:hover {
 
 #details {
     margin: auto 0;
-    padding: 0 0 2rem 0;
+    padding: 0 0 1rem 0;
+    display: flex;
 }
 
 #details * {
     font-size: 1.15rem;
+    width: 1.5rem;
+    margin-left: 1rem;
+}
+
+.social-link:hover {
+    transform: translateY(-15%);
 }
 
 h1 {
