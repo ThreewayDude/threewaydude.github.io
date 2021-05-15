@@ -298,11 +298,13 @@ h3 {
     
     #hero-image-section {
         width: fit-content;
+        width: -moz-fit-content;
         margin: 0 auto;
     }
 
     #hero-image-section img {
         width: fit-content;
+        width: -moz-fit-content;
         margin: 0 auto;
     }
 
