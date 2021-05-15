@@ -8,7 +8,8 @@
 body {
     background-color: #313131;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 23px;
+    /* font-size: 1.5rem; */
 }
 
 a {
@@ -195,7 +196,7 @@ h3 {
 
 .image-scroll img {
     max-width: 100%;
-    max-height: 20rem;
+    max-height: 25rem;
     flex-shrink: 0;
     margin: 0 1rem;
     scroll-snap-align: start;
@@ -218,7 +219,7 @@ h3 {
 
 @media screen and (max-width: 800px) {
     body {
-        font-size: 0.8rem;
+        font-size: 14px;
     }
 
     h1 {
@@ -345,6 +346,6 @@ h3 {
     }
 
     .image-scroll img {
-        max-height: 12.5rem;
+        max-height: 11rem;
     }
 }
