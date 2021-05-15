@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', 'Gadugi';
+    font-family: 'Poppins', 'Gadugi', sans-serif;
 }
 
 body {
@@ -39,6 +39,10 @@ a:hover {
     margin: 2rem auto;
     display: flex;
     justify-content: space-between;
+}
+
+#link-container {
+    display: flex;
 }
 
 #links {
@@ -210,4 +214,131 @@ h3 {
 
 .image-scroll::-webkit-scrollbar-track {
     background: transparent;
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        font-size: 0.8rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        width: 85%;
+    }
+
+    #navbar {
+        margin: 1rem auto;
+        display: block;
+    }
+    
+    #link-container {
+        display: unset;
+    }
+
+    #links {
+        margin: 0;
+        justify-content: space-around;
+    }
+
+    .link {
+        width: 3rem;
+    }
+
+    .link img {
+        margin: 0 auto;
+        width: 3rem;
+    }
+
+    .link h6 {
+        visibility: hidden;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        float: left;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .link:hover h6 {
+        visibility: visible;
+    }
+
+    #select-hritik {
+        width: fit-content;
+        width: -moz-fit-content;
+        font-size: 1.25rem;
+        margin: 0 auto;
+        padding: 0 0 1rem 0;
+    }
+
+    #details {
+        width: fit-content;
+        width: -moz-fit-content;
+        margin: auto auto;
+        padding: 0.5rem 0 0 0;
+        display: flex;
+    }
+
+    #details * {
+        font-size: 1.15rem;
+        width: 1.25rem;
+        margin-right: 0.75rem;
+    }
+
+    #about-character h1 {
+        text-align: center;
+    }
+    
+    #hero-image-section {
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    #hero-image-section img {
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    #about {
+        margin-top: 1rem;
+        display: block;
+    }
+
+    #abilities {
+        width: 100%;
+    }
+    
+    #blurb {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    #project-list {
+        column-count: 1;
+        column-width: 100%;
+    }
+
+    .project-card {
+        padding: 1.0rem 1.5rem 1.5rem 1.5rem;
+        border-radius: 0.75rem;
+    }
+
+    .project-title {
+        font-size: 1.5rem;
+    }
+
+    .project-skill {
+        font-size: 0.75rem;
+    }
+
+    .project-date {
+        font-size: 0.7rem;
+    }
 }
