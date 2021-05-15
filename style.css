@@ -195,7 +195,7 @@ h3 {
 
 .image-scroll img {
     max-width: 100%;
-    max-height: 25rem;
+    max-height: 20rem;
     flex-shrink: 0;
     margin: 0 1rem;
     scroll-snap-align: start;
@@ -342,5 +342,9 @@ h3 {
 
     .project-date {
         font-size: 0.7rem;
+    }
+
+    .image-scroll img {
+        max-height: 12.5rem;
     }
 }
