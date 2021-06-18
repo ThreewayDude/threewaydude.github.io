@@ -425,4 +425,8 @@ h3 {
     .character-info {
         width: 100%;
     }
+
+    #main-blurb {
+        text-align: center;
+    }
 }
